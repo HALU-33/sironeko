@@ -70,8 +70,8 @@ document.getElementById('calc-form').addEventListener('submit', function(event) 
   const bpNeeded = parseInt(document.getElementById('bp-needed').value);
   const stage = document.getElementById('stage').value;
   const formation = document.getElementById('formation').value;
-  const stageOption = document.getElementById('stage').options[stage].text;
-  const formationOption = document.getElementById('formation').options[formation].text;
+  const stageOption = stage.options[stage.selectedIndex].text;
+  const formationOption = formation.options[formation.selectedIndex].text;
 
   // 昇格後の称号を特定
   const nextTitle = titles[currentTitleIndex + 1].name;
