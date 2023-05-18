@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BP計算ツール</title>
+</head>
+<body>
+  <div id="container">
+    <h1 id="title">BP計算ツール</h1>
+    <div id="back_button">
+        <a href="index.html">メインメニューに戻る</a>
+    </div>
+
+    <form id="calc-form">
+      <div id="title-group">
+        <label for="current-title">現在の称号:</label>
+        <select id="current-title"></select>
+      </div>
+
+      <div id="bp-group">
+        <label for="bp-needed">昇格に必要なBP:</label>
+        <input type="number" id="bp-needed" min="0">
+      </div>
+
+      <div id="stage-group">
+        <label for="stage">周回しているステージ:</label>
+        <select id="stage">
+          <option value="runes">ルーンざくざく</option>
+          <option value="everyone">みんなでアゲアゲ</option>
+        </select>
+      </div>
+
+      <div id="formation-group">
+        <label for="formation">編成:</label>
+        <select id="formation">
+          <option value="normal">通常編成</option>
+          <option value="bp-boost">BP増加編成</option>
+        </select>
+      </div>
+
+      <button type="submit">計算</button>
+    </form>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="BP_Calc.js"></script>
+</body>
+</html>

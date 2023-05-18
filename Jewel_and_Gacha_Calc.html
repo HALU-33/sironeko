@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>石とガチャの計算</title>
+    <script src="JandG_Calc.js"></script>
+    <style>
+    .hidden {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>石とガチャの計算</h1>
+
+    <div id="back_button">
+        <a href="index.html">メインメニューに戻る</a>
+    </div>
+
+    <div id="calculation-choice">
+        <label for="calculation-type">計算方法:</label>
+        <select id="calculation-type">
+            <option value="">選択してください</option>
+            <option value="quest">クエスト回数による石収集予測計算</option>
+            <option value="gacha">ガチャを引くための計算</option>
+        </select>
+    </div>
+
+    <div id="quest-input" class="hidden">
+        <label for="quest-target">目標の石の数:</label>
+        <input type="number" id="quest-target">
+        <label for="quest-current">現在所持している石の数:</label>
+        <input type="number" id="quest-current">
+    </div>
+
+    <div id="gacha-input" class="hidden">
+        <label for="gacha-times">何連引きたいか:</label>
+        <input type="number" id="gacha-times">
+        <label for="gacha-current">現在所持している石の数:</label>
+        <input type="number" id="gacha-current">
+    </div>
+
+    <button id="calculate-button" disabled>計算開始</button>
+
+    <div id="result"></div>
+    </div>
+
+    <div id="Total_Jewel_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>島の名前</th>
+                    <th>NORMAL</th>
+                    <th>HARD</th>
+                    <th>NIGHTMARE</th>
+                    <th>島の合計</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1島</td>
+                    <td>38個</td>
+                    <td>32個</td>
+                    <td>89個</td>
+                    <td>159個</td>
+                </tr>
+                <tr>
+                    <td>2島</td>
+                    <td>208個</td>
+                    <td>140個</td>
+                    <td>337個</td>
+                <td>685個</td>
+                </tr>
+                <tr>
+                    <td>3島</td>
+                    <td>316個</td>
+                    <td>182個</td>
+                    <td>514個</td>
+                    <td>1012個</td>
+                </tr>
+                <tr>
+                    <td>4島</td>
+                    <td>256個</td>
+                    <td>238個</td>
+                    <td>-</td>
+                    <td>494個</td>
+                </tr>
+                <tr>
+                    <td>5島</td>
+                    <td>257個</td>
+                    <td>272個</td>
+                    <td>-</td>
+                    <td>529個</td>
+                </tr>
+                <tr>
+                    <td>6島</td>
+                    <td>258個</td>
+                    <td>272個</td>
+                    <td>-</td>
+                    <td>530個</td>
+                </tr>
+                <tr>
+                <td>7島</td>
+                <td>255個</td>
+                <td>272個</td>
+                <td>-</td>
+                <td>527個</td>
+                </tr>
+                <tr>
+                    <td>8島</td>
+                    <td>262個</td>
+                    <td>272個</td>
+                    <td>-</td>
+                    <td>534個</td>
+                </tr>
+                <tr>
+                    <td>9島</td>
+                    <td>265個</td>
+                    <td>281個</td>
+                    <td>-</td>
+                    <td>546個</td>
+                </tr>
+                <tr>
+                    <td>10島</td>
+                    <td>275個</td>
+                    <td>272個</td>
+                    <td>-</td>
+                    <td>547個</td>
+                </tr>
+                <tr>
+                    <td>11島</td>
+                    <td>273個</td>
+                    <td>272個</td>
+                    <td>-</td>
+                    <td>545個</td>
+                </tr>
+                <tr>
+                    <td>12島</td>
+                    <td>243個</td>
+                    <td>271個</td>
+                    <td>-</td>
+                    <td>514個</td>
+                </tr>
+                <tr>
+                    <td>13島</td>
+                    <td>187個</td>
+                    <td>192個</td>
+                    <td>-</td>
+                    <td>379個</td>
+                </tr>
+                <tr>
+                    <td>14島</td>
+                    <td>180個</td>
+                    <td>194個</td>
+                    <td>-</td>
+                    <td>374個</td>
+                </tr>
+                <tr>
+                    <td>15島</td>
+                    <td>189個</td>
+                    <td>182個</td>
+                    <td>-</td>
+                    <td>371個</td>
+                </tr>
+                <tr>
+                    <td>16島</td>
+                    <td>283個</td>
+                    <td>204個</td>
+                    <td>-</td>
+                    <td>487個</td>
+                </tr>
+                <tr>
+                    <td>難易度の合計</td>
+                    <td>3745個</td>
+                    <td>3548個</td>
+                    <td>940個</td>
+                    <td>8233個</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
