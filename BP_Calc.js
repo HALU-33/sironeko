@@ -66,12 +66,12 @@ document.getElementById('calc-form').addEventListener('submit', function(event) 
   event.preventDefault();
 
   // 入力を取得
-  const currentTitleIndex = parseInt(document.getElementById('current-title').value);
-  const bpNeeded = parseInt(document.getElementById('bp-needed').value);
-  const stage = document.getElementById('stage').value;
-  const formation = document.getElementById('formation').value;
-  const stageOption = stage.options[stage.selectedIndex].text;
-  const formationOption = formation.options[formation.selectedIndex].text;
+const currentTitleIndex = parseInt(document.getElementById('current-title').value);
+const bpNeeded = parseInt(document.getElementById('bp-needed').value);
+const stage = document.getElementById('stage');
+const formation = document.getElementById('formation');
+const stageOption = stage.options[stage.selectedIndex].text;
+const formationOption = formation.options[formation.selectedIndex].text;
 
   // 昇格後の称号を特定
   const nextTitle = titles[currentTitleIndex + 1].name;
