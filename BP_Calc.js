@@ -1,7 +1,4 @@
-document.getElementById('calc-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-// 称号と累計BPの一覧
+d// 称号と累計BPの一覧
 const titles = [
   { name: "アストラ島の住人", totalBP: 0 },
   { name: "駆け出し冒険家9級", totalBP: 10 },
