@@ -53,17 +53,23 @@ const stages = {
   everyone: { normal: 3500, 'bp-boost': 8300 },
 };
 
+// 称号の選択肢を生成
+const titleSelect = document.getElementById('current-title');
+titles.forEach((title, index) => {
+  const option = document.createElement('option');
+  option.value = index;
+  option.text = title.name;
+  titleSelect.appendChild(option);
+});
+
+document.getElementById('calc-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
   // 入力を取得
   const currentTitleIndex = parseInt(document.getElementById('current-title').value);
   const bpNeeded = parseInt(document.getElementById('bp-needed').value);
-
-  // 以下の行は要素そのものを取得します
-  const stageSelect = document.getElementById('stage');
-  const formationSelect = document.getElementById('formation');
-
-  // 以下の行は要素のvalueを取得します
-  const stage = stageSelect.value;
-  const formation = formationSelect.value;
+  const stage = document.getElementById('stage').value;
+  const formation = document.getElementById('formation').value;
 
   // 昇格後の称号を特定
   const nextTitle = titles[currentTitleIndex + 1].name;
@@ -76,4 +82,5 @@ const stages = {
 
   // 結果を表示
   const resultDiv = document.getElementById('result');
-  resultDiv.textContent = `ステージ: ${stage}, 編成: ${format}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
+  resultDiv.textContent = `ステージ: ${stage}, 編成: ${formation}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
+});
