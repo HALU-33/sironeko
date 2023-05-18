@@ -68,19 +68,35 @@ document.getElementById('calc-form').addEventListener('submit', function(event) 
   // 入力を取得
   const currentTitleIndex = parseInt(document.getElementById('current-title').value);
   const bpNeeded = parseInt(document.getElementById('bp-needed').value);
-  const stage = document.getElementById('stage').value;
-  const formation = document.getElementById('formation').value;
+  
+  // stageとformationの選択されたテキストを取得
+  const stageSelect = document.getElementById('stage');
+  const stage = stageSelect.options[stageSelect.selectedIndex].text;
+  const formationSelect = document.getElementById('formation');
+  const formation = formationSelect.options[formationSelect.selectedIndex].text;
+  
+  // ここで、stageとformationの値を取得するためのマップを作成します
+  const stageMap = { "ルーンざくざく": "runes", "みんなでアゲアゲ": "everyone" };
+  const formationMap = { "通常編成": "normal", "BP増加編成": "bp-boost" };
 
-  // 昇格後の称号を特定
-  const nextTitle = titles[currentTitleIndex + 1].name;
-
-  // 1回に獲得できるBPを算出
-  const bpPerRound = stages[stage][formation];
-
-  // 周回数を計算（小数は切り上げ）
-  const roundsNeeded = Math.ceil(bpNeeded / bpPerRound);
-
-  // 結果を表示
+  // 結果を表示する場所を取得
   const resultDiv = document.getElementById('result');
-  resultDiv.textContent = `ステージ: ${stage}, 編成: ${formation}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
+
+  // 称号が最高ランクであるかどうかを確認
+  if (currentTitleIndex === titles.length - 1) {
+    // 最高ランクの場合は特別なメッセージを表示
+    resultDiv.textContent = 'BPは真理の探究者三十四段でカンストするため周回する必要はありません。';
+  } else {
+    // 昇格後の称号を特定
+    const nextTitle = titles[currentTitleIndex + 1].name;
+
+    // 1回に獲得できるBPを算出
+    const bpPerRound = stages[stageMap[stage]][formationMap[formation]];
+
+    // 周回数を計算（小数は切り上げ）
+    const roundsNeeded = Math.ceil(bpNeeded / bpPerRound);
+
+    // 通常の結果を表示
+    resultDiv.textContent = `ステージ: ${stage}, 編成: ${formation}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
+  }
 });
