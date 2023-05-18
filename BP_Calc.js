@@ -70,6 +70,8 @@ document.getElementById('calc-form').addEventListener('submit', function(event) 
   const bpNeeded = parseInt(document.getElementById('bp-needed').value);
   const stage = document.getElementById('stage').value;
   const formation = document.getElementById('formation').value;
+  const stageOption = document.getElementById('stage').options[stage].text;
+  const formationOption = document.getElementById('formation').options[formation].text;
 
   // 昇格後の称号を特定
   const nextTitle = titles[currentTitleIndex + 1].name;
@@ -82,5 +84,5 @@ document.getElementById('calc-form').addEventListener('submit', function(event) 
 
   // 結果を表示
   const resultDiv = document.getElementById('result');
-  resultDiv.textContent = `ステージ: ${stage}, 編成: ${formation}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
+  resultDiv.textContent = `ステージ: ${stageOption}, 編成: ${formationOption}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
 });
