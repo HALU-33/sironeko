@@ -1,6 +1,6 @@
 window.onload = function() {
   // Fetch data
-  fetch('/sironeko.github.io/titles_bp.json')
+  fetch('/titles_bp.json')
     .then(response => response.json())
     .then(data => {
       let current_title = document.getElementById("current-title");
