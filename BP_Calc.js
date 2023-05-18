@@ -1,4 +1,4 @@
-d// 称号と累計BPの一覧
+// 称号と累計BPの一覧
 const titles = [
   { name: "アストラ島の住人", totalBP: 0 },
   { name: "駆け出し冒険家9級", totalBP: 10 },
@@ -49,8 +49,8 @@ const titles = [
 
 // ステージと獲得BPの関係
 const stages = {
-  'ルーンざくざく': { '通常編成': 7000, 'BP増加編成': 16700 },
-  'みんなでアゲアゲ': { '通常編成': 3500, 'BP増加編成': 8300 },
+  runes: { normal: 7000, 'bp-boost': 16700 },
+  everyone: { normal: 3500, 'bp-boost': 8300 },
 };
 
   // 入力を取得
@@ -77,4 +77,3 @@ const stages = {
   // 結果を表示
   const resultDiv = document.getElementById('result');
   resultDiv.textContent = `ステージ: ${stage}, 編成: ${format}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
-});
