@@ -52,8 +52,8 @@ const titles = [
 
 // ステージと獲得BPの関係
 const stages = {
-  runes: { normal: 7000, 'bp-boost': 16700 },
-  everyone: { normal: 3500, 'bp-boost': 8300 },
+  'ルーンざくざく': { '通常編成': 7000, 'BP増加編成': 16700 },
+  'みんなでアゲアゲ': { '通常編成': 3500, 'BP増加編成': 8300 },
 };
 
   // 入力を取得
