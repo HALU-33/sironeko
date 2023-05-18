@@ -64,10 +64,6 @@ const stages = {
   const stageSelect = document.getElementById('stage');
   const formationSelect = document.getElementById('formation');
 
-  // select要素のselectedIndexプロパティを使って選択されたoptionのtextプロパティを取得します
-  const stageOption = stageSelect.options[stageSelect.selectedIndex].text;
-  const formationOption = formationSelect.options[formationSelect.selectedIndex].text;
-
   // 以下の行は要素のvalueを取得します
   const stage = stageSelect.value;
   const formation = formationSelect.value;
@@ -83,5 +79,5 @@ const stages = {
 
   // 結果を表示
   const resultDiv = document.getElementById('result');
-  resultDiv.textContent = `ステージ: ${stageOption}, 編成: ${formationOption}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
+  resultDiv.textContent = `ステージ: ${stage}, 編成: ${format}, 昇格に必要なBP: ${bpNeeded}, 1回に獲得できるBP: ${bpPerRound}, 周回数: ${roundsNeeded}, 昇格後の称号: ${nextTitle}`;
 });
