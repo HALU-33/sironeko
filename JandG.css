@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+:root {
+  /* ライトモードの設定 */
+  --text-color-light: #000;
+  --bg-color-light: #f5f5f5;
+  --button-bg-color-light: #a5d6a7;
+  --button-text-color-light: #2e7d32;
+  --button-disabled-bg-color-light: #ddd;
+  --button-disabled-text-color-light: #aaa;
+  --box-bg-color-light: #fff;
+
+  /* ダークモードの設定 */
+  --text-color-dark: #fff;
+  --bg-color-dark: #333;
+  --button-bg-color-dark: #006400;
+  --button-text-color-dark: #a5d6a7;
+  --button-disabled-bg-color-dark: #555;
+  --button-disabled-text-color-dark: #888;
+  --box-bg-color-dark: #444;
+
+  /* 初期設定はライトモードとする */
+  --text-color: var(--text-color-light);
+  --bg-color: var(--bg-color-light);
+  --button-bg-color: var(--button-bg-color-light);
+  --button-text-color: var(--button-text-color-light);
+  --button-disabled-bg-color: var(--button-disabled-bg-color-light);
+  --button-disabled-text-color: var(--button-disabled-text-color-light);
+  --box-bg-color: var(--box-bg-color-light);
+}
+
+/* 全体の設定 */
+body {
+    background-color: var(--bg-color); /* 背景色 */
+    color: var(--text-color); /* テキストカラー */
+    font-family: Arial, sans-serif; /* シンプルなフォント */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ヘッダー */
+h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ボタンの設定 */
+button {
+    padding: 15px 25px;
+    font-size: 1em;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: var(--button-disabled-bg-color);
+    color: var(--button-disabled-text-color);
+}
+
+/* ドロップダウンの設定 */
+#calculation-choice {
+    margin-top: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 1.2em;
+    margin-left: 10px;
+    border-radius: 25px; /* 丸みをつける */
+}
+
+/* 入力フォームの設定 */
+input[type=number] {
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 25px; /* 丸みをつける */
+}
+
+/* テーブルの設定 */
+table {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #aaa;
+}
+
+th, td {
+    padding: 10px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.8em;
+    }
+}
+
+/* 結果表示ボックスの設定 */
+.result-box {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 25px; /* 丸みをつける */
+    background-color: var(--box-bg-color); /* ボックスの背景色を白に */
+    width: 100%; /* ボックスの幅を設定 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 影をつける */
+    text-align: center; /* テキストを中央に配置 */
+}
+
+/* ダークモード / ライトモード 切り替えボタン */
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+a {
+    color: #007BFF; /* この色はブートストラップのリンク色と同じです */
+    text-decoration: none; /* リンクの下線を削除 */
+}
+
+a:hover {
+    color: #0056b3; /* マウスオーバー時の色。少し暗めに設定 */
+}

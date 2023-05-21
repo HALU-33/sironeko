@@ -48,3 +48,30 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  function toggleDarkMode() {
+    let root = document.documentElement;
+    let darkMode = localStorage.getItem('darkMode');
+
+    if(darkMode === null || darkMode === "off") {
+      // ダークモードをオンにする
+      root.style.setProperty('--text-color', getComputedStyle(root).getPropertyValue('--text-color-dark'));
+      root.style.setProperty('--bg-color', getComputedStyle(root).getPropertyValue('--bg-color-dark'));
+      root.style.setProperty('--button-bg-color', getComputedStyle(root).getPropertyValue('--button-bg-color-dark'));
+      root.style.setProperty('--button-text-color', getComputedStyle(root).getPropertyValue('--button-text-color-dark'));
+      root.style.setProperty('--button-disabled-bg-color', getComputedStyle(root).getPropertyValue('--button-disabled-bg-color-dark'));
+      root.style.setProperty('--button-disabled-text-color', getComputedStyle(root).getPropertyValue('--button-disabled-text-color-dark'));
+      root.style.setProperty('--box-bg-color', getComputedStyle(root).getPropertyValue('--box-bg-color-dark'));
+      localStorage.setItem('darkMode', 'on');
+    } else {
+      // ダークモードをオフにする
+      root.style.setProperty('--text-color', getComputedStyle(root).getPropertyValue('--text-color-light'));
+      root.style.setProperty('--bg-color', getComputedStyle(root).getPropertyValue('--bg-color-light'));
+      root.style.setProperty('--button-bg-color', getComputedStyle(root).getPropertyValue('--button-bg-color-light'));
+      root.style.setProperty('--button-text-color', getComputedStyle(root).getPropertyValue('--button-text-color-light'));
+      root.style.setProperty('--button-disabled-bg-color', getComputedStyle(root).getPropertyValue('--button-disabled-bg-color-light'));
+      root.style.setProperty('--button-disabled-text-color', getComputedStyle(root).getPropertyValue('--button-disabled-text-color-light'));
+      root.style.setProperty('--box-bg-color', getComputedStyle(root).getPropertyValue('--box-bg-color-light'));
+      localStorage.setItem('darkMode', 'off');
+    }
+  }

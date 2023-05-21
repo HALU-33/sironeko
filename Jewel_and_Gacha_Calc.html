@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>石とガチャの計算</title>
+    <link rel="stylesheet" type="text/css" href="JandG.css">
     <script src="JandG_Calc.js"></script>
     <style>
     .hidden {
@@ -18,6 +19,9 @@
         <a href="index.html">メインメニューに戻る</a>
     </div>
 
+    <button id="mode-switch" onclick="toggleDarkMode()">表示モード切り替え</button>
+
+
     <div id="calculation-choice">
         <label for="calculation-type">計算方法:</label>
         <select id="calculation-type">
@@ -29,24 +33,25 @@
 
     <div id="quest-input" class="hidden">
         <label for="quest-target">目標の石の数:</label>
-        <input type="number" id="quest-target">
+        <input type="number" id="quest-target" placeholder="例: 500">
         <label for="quest-current">現在所持している石の数:</label>
-        <input type="number" id="quest-current">
+        <input type="number" id="quest-current" placeholder="例: 50">
     </div>
 
     <div id="gacha-input" class="hidden">
         <label for="gacha-times">何連引きたいか:</label>
-        <input type="number" id="gacha-times">
+        <input type="number" id="gacha-times" placeholder="例: 30">
         <label for="gacha-current">現在所持している石の数:</label>
-        <input type="number" id="gacha-current">
+        <input type="number" id="gacha-current" placeholder="例: 100">
     </div>
 
     <button id="calculate-button" disabled>計算開始</button>
 
-    <div id="result"></div>
+    <div id="result" class="result-box"></div>
     </div>
 
     <div id="Total_Jewel_table">
+        <h2>メインストーリ―の石の数一覧</h2>
         <table>
             <thead>
                 <tr>
