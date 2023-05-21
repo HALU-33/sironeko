@@ -3,12 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>ホーム画面</title>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div id="button-container">
-            <button id="jewel-gacha-calc-btn" onclick="location.href='Jewel_and_Gacha_Calc.html'">石とガチャの計算</button>
-            <button id="bp-calc-btn" onclick="location.href='BP_Calc.html'">BP周回数計算</button>
+        <div id="button-group">
+            <button id="jewel-gacha-calc-btn" class="btn03 pushdown" onclick="location.href='Jewel_and_Gacha_Calc.html'">
+                <span>石とガチャの計算</span>
+            </button>
+            <button id="bp-calc-btn" class="btn03 pushdown" onclick="location.href='BP_Calc.html'">
+                <span>BP周回数計算</span>
+            </button>
         </div>
+
+        <h2>リンク置き場</h2>
 
         <div id="link-container">
             <a id="official-site-link" href="https://colopl.co.jp/shironekoproject/" target="_blank">公式サイトへ</a>
