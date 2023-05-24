@@ -1,0 +1,6 @@
+@charset "utf-8";
+@media screen and (max-width: 480px){
+    body{
+        font-size: 100%; /* スマホ用にフォントサイズを小さくする */
+    }
+}
